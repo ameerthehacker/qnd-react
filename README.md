@@ -1,26 +1,32 @@
-# Webpack Starter Pack
+# Quick and Dirty React :hammer:
 
-This is a very basic webpack setup with just ES6 support and everything else is left upto your creativity
+This is my quick and dirty implementation of react to help myself and others to understand what react does under the hood
 
-## How to use this?
+__Article__ comming soon :wink:
 
-1. Clone the repository
+* The replication of ReactDom is available in __src/QndReactDom.js__
+* The replication of React is available in __src/QndReact.js__
 
-```sh
-git clone https://github.com/ameerthehacker/webpack-starter-pack
-```
+## How to run it?
 
-2. Install the dependenices
+1. Clone the repo
+2. Install the dependencies
 
 ```sh
 npm install
 ```
 
-3. Run the application
+3. Run the sample project using QndReact.js :heart:
 
 ```sh
 npm start
 ```
+
+## Found any issue?
+
+Please feel free to raise an issue or PR :wink:
+
+Show your support by :star: the repo
 
 ## License
 
