@@ -1,26 +1,11 @@
 // file: src/qnd-react.js
 import { h } from 'snabbdom';
 
-// [['idly'], ['dosa', 'vada']] -> ['idly', 'dosa', 'vada']
-const flattenChildren = (children) => {
-  const flattenedChildren = [];
-
-  children.forEach(child => {
-    if (Array.isArray(child)) {
-      flattenedChildren.push(...child);
-    }
-    else {
-      flattenedChildren.push(child);
-    }
-  });
-
-  return flattenedChildren;
-};
-
 const createElement = (type, props = {}, ...children) => {
   // flatten the children
   // this to make todos.map(todo => <p>{todo}</p>) work in jsx
-  children = flattenChildren(children);
+  // [['idly'], ['dosa', 'vada']] -> ['idly', 'dosa', 'vada']
+  children = children.flat();
 
   // if type is a Class then
   // 1. create a instance of the Class
@@ -50,7 +35,7 @@ const createElement = (type, props = {}, ...children) => {
   let eventProps = {};
 
   // This is to seperate out the text attributes and event listener attributes
-  Object.keys(props).forEach((propKey) => {
+  for(let propKey in props) {
     // event props always startwith on eg. onClick, onChange etc.
     if (propKey.startsWith('on')) {
       // onClick -> click
@@ -61,7 +46,7 @@ const createElement = (type, props = {}, ...children) => {
     else {
       dataProps[propKey] = propKey[propKey];
     }
-  });
+  }
 
   // props -> snabbdom's internal text attributes
   // on -> snabbdom's internal event listeners attributes
