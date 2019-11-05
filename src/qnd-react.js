@@ -90,7 +90,7 @@ class Component {
 // add a static property to differentiate between a class and a function
 Component.prototype.isQndReactClassComponent = true;
 
-// to be exported like React.Component
+// to be exported like React.createElement, React.Component
 const QndReact = {
   createElement,
   Component
