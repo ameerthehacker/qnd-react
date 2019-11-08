@@ -44,7 +44,7 @@ const createElement = (type, props = {}, ...children) => {
       eventProps[event] = props[propKey];
     }
     else {
-      dataProps[propKey] = propKey[propKey];
+      dataProps[propKey] = props[propKey];
     }
   }
 
